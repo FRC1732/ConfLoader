@@ -95,7 +95,7 @@ public class Config {
 			}else {
 				for(int j = 0; j < parts.length; j++) {
 					switch(parts[j].substring(0, parts[j].indexOf(' '))) {
-						case "piston":part = new Piston(system.getName(), parts[j].substring(parts[j].indexOf(' ')+1, parts[j].indexOf('(')), piston_id, 0);break;
+						case "piston":part = new Piston(system.getName(), parts[j].substring(parts[j].indexOf(' ')+1, parts[j].indexOf('(')), piston_id, 0, 0);break;
 						case "motor":part = new Motor(system.getName(), parts[j].substring(parts[j].indexOf(' ')+1, parts[j].indexOf('(')), 0, motor_reversed);break;
 						case "joystick":part = new Joystick(system.getName(), parts[j].substring(parts[j].indexOf(' ')+1, parts[j].indexOf('(')), 0, joystick_major_axis, joystick_x_axis, joystick_y_axis, joystick_z_axis);break;
 						default: throw new RuntimeException("The file has bad syntax");
@@ -113,6 +113,9 @@ public class Config {
 								break;
 							case "num":
 								((Piston) part).setDevice_number(Integer.parseInt(tmp[1]));
+								break;
+							case "rnum":
+								((Piston) part).setReverse_number(Integer.parseInt(tmp[1]));
 								break;
 							case "usb":
 								((Joystick) part).setUsb_id(Integer.parseInt(tmp[1]));

@@ -22,7 +22,7 @@ System Drivetrain {
 }
 System Grabber {
 	Motor Main (id = 3);
-	Piston Grabber (number = 2);
+	Piston Grabber (num = 2, rnum = 3);
 }
 System DriverStation {
 	Joystick Left (usb = 1, x = 1, major = y);
@@ -43,6 +43,6 @@ Parts are mostly straight forward, but `piston` refers to pneumatic pistons.
 ## Docs
 - `*` can be set in Main
 ### Parts
-- `Piston`: a pneumatic piston (`*id` = the can id of the board, `number` = the number on the board)
+- `Piston`: a pneumatic piston (`*id` = the can id of the board, `num` = the number on the board, `rnum` = the number on the board for reversing the piston)
 - `Motor`: a physical motor (`id` = the can id of the motor, `*reversed` = whether the motor should be reversed)
 - `Joystick`: a joystick on the driverstation (`usb` = the usb numbers, `*x` = the x axis, `*y` = the y axis, `*z` = the z axis, `*major` = the major axis (the most import axis))
